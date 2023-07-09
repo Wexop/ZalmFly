@@ -7,8 +7,8 @@ public class PlayerJump : MonoBehaviour
 {
     private Rigidbody2D _rb;
     private Animator _animator;
-    [SerializeField] private float jumpPower;
-    [SerializeField] private float jumpCd;
+    [SerializeField] public float jumpPower;
+    [SerializeField] public float jumpCd;
 
     [SerializeField] private GameEvent playerStartJump;
 
