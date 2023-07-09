@@ -1325,3 +1325,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2063244180
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2063244182}
+  - component: {fileID: 2063244181}
+  m_Layer: 0
+  m_Name: TubeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2063244181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063244180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7177ee14554371b448cc98c8aec0d14b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tubeSpeedVariable: {fileID: 11400000, guid: 79ceecb1650c1fa498099c2cbba3489d, type: 2}
+  tubeSpeedInitial: 10
+  maxTubeInList: 10
+  tubeLifePos: {x: 87.8, y: -16.8}
+  spaceBetweenTube: 30
+  tubeYRange: {x: -30.5, y: -19.9}
+  tubePrefab: {fileID: 6294867685267902629, guid: af1f4f5f576f0df459c6e94e6e5ee6d8, type: 3}
+  tubeList: []
+--- !u!4 &2063244182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063244180}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.508839, y: -11.908068, z: -0.3366876}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
