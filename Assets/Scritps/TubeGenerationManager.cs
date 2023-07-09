@@ -64,6 +64,11 @@ public class TubeGenerationManager : MonoBehaviour
 
     private void Start()
     {
+        tubeSpeedVariable.Value = 0;
+    }
+
+    public void OnPlayerStartJump()
+    {
         tubeSpeedVariable.Value = tubeSpeedInitial;
     }
 }

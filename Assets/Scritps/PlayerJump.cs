@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using RoboRyanTron.Unite2017.Events;
 using UnityEngine;
 
 public class PlayerJump : MonoBehaviour
@@ -8,9 +9,13 @@ public class PlayerJump : MonoBehaviour
     private Animator _animator;
     [SerializeField] private float jumpPower;
     [SerializeField] private float jumpCd;
+
+    [SerializeField] private GameEvent playerStartJump;
+
     private float _lastJump;
     private static readonly int Jump1 = Animator.StringToHash("Jump");
     private bool _playerisDead;
+    private bool _firstJump = true;
 
     void Start()
     {
@@ -29,6 +34,13 @@ public class PlayerJump : MonoBehaviour
 
     public void Jump()
     {
+        
+        if (_firstJump)
+        {
+            playerStartJump.Raise();
+            _firstJump = false;
+        }
+        
         _rb.simulated = true;
         if (_lastJump < jumpCd) return;
         _lastJump = 0;
