@@ -10,26 +10,34 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private float jumpCd;
     private float _lastJump;
     private static readonly int Jump1 = Animator.StringToHash("Jump");
+    private bool _playerisDead;
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _lastJump = jumpCd;
+        _rb.simulated = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         _lastJump += Time.deltaTime;
-        if (Input.GetKey(KeyCode.Space)) Jump();
+        if (!_playerisDead && Input.GetKey(KeyCode.Space)) Jump();
     }
 
     public void Jump()
     {
+        _rb.simulated = true;
         if (_lastJump < jumpCd) return;
         _lastJump = 0;
         _rb.velocity = new Vector2(0, jumpPower);
         _animator.SetTrigger(Jump1);
+    }
+
+    public void OnPlayerDead()
+    {
+        _playerisDead = true;
     }
 }
