@@ -716,7 +716,7 @@ GameObject:
   - component: {fileID: 1420887409}
   - component: {fileID: 1420887410}
   - component: {fileID: 1420887411}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -849,7 +849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da6f1eaa60067174785557288a90999c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpPower: 35
+  jumpPower: 25
   jumpCd: 0.2
 --- !u!95 &1420887409
 Animator:
@@ -884,6 +884,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDieEvent: {fileID: 11400000, guid: 500bc51696ea2f04e8fcbf974d7df5d6, type: 2}
+  addScoreEvent: {fileID: 11400000, guid: d9ab82d6b306fec4a8640cf317e194e0, type: 2}
+  score: {fileID: 11400000, guid: b8df67532497af54e82df60cbc483736, type: 2}
 --- !u!114 &1420887411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -912,6 +914,80 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1589640554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1589640557}
+  - component: {fileID: 1589640556}
+  - component: {fileID: 1589640555}
+  m_Layer: 0
+  m_Name: PlayerDeathManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1589640555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589640554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e686e578b9e02ac4bb7aefd9bacdb070, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tubeSpeed: {fileID: 11400000, guid: 79ceecb1650c1fa498099c2cbba3489d, type: 2}
+--- !u!114 &1589640556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589640554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e839e4c12473014b9b3d3faccc0f61d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 500bc51696ea2f04e8fcbf974d7df5d6, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1589640555}
+        m_TargetAssemblyTypeName: PlayerDeathmanager, Assembly-CSharp
+        m_MethodName: OnPlayerDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &1589640557
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589640554}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.508839, y: -11.908068, z: -0.3366876}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1632421094
 GameObject:
   m_ObjectHideFlags: 0
