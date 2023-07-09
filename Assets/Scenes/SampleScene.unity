@@ -265,7 +265,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 303113343}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c693fb835d95ce849b1c4a2e62e47633, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -393,7 +393,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 752550740}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c693fb835d95ce849b1c4a2e62e47633, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -491,6 +491,7 @@ GameObject:
   - component: {fileID: 1420887406}
   - component: {fileID: 1420887407}
   - component: {fileID: 1420887408}
+  - component: {fileID: 1420887409}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -574,7 +575,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1420887403}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c693fb835d95ce849b1c4a2e62e47633, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -607,11 +608,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 6
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c693fb835d95ce849b1c4a2e62e47633, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 1
 --- !u!114 &1420887408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -626,6 +627,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpPower: 35
   jumpCd: 0.2
+--- !u!95 &1420887409
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420887403}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 47898688d27aaa8478b9ae30c6d10b07, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1747838970
 GameObject:
   m_ObjectHideFlags: 0
