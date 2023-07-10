@@ -1,0 +1,47 @@
+{
+    "ZalmFlyAgent": {
+        "checkpoints": [
+            {
+                "steps": 31518,
+                "file_path": "results\\ppo\\ZalmFlyAgent\\ZalmFlyAgent-31518.onnx",
+                "reward": -318.4000005722046,
+                "creation_time": 1689017990.7725134,
+                "auxillary_file_paths": [
+                    "results\\ppo\\ZalmFlyAgent\\ZalmFlyAgent-31518.pt"
+                ]
+            },
+            {
+                "steps": 162814,
+                "file_path": "results\\ppo\\ZalmFlyAgent\\ZalmFlyAgent-162814.onnx",
+                "reward": -27.30800005685538,
+                "creation_time": 1689019054.6438093,
+                "auxillary_file_paths": [
+                    "results\\ppo\\ZalmFlyAgent\\ZalmFlyAgent-162814.pt"
+                ]
+            },
+            {
+                "steps": 232986,
+                "file_path": "results\\ppo\\ZalmFlyAgent\\ZalmFlyAgent-232986.onnx",
+                "reward": -8.436482084690553,
+                "creation_time": 1689019632.6603951,
+                "auxillary_file_paths": [
+                    "results\\ppo\\ZalmFlyAgent\\ZalmFlyAgent-232986.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 232986,
+            "file_path": "results\\ppo\\ZalmFlyAgent.onnx",
+            "reward": -8.436482084690553,
+            "creation_time": 1689019632.6603951,
+            "auxillary_file_paths": [
+                "results\\ppo\\ZalmFlyAgent\\ZalmFlyAgent-232986.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.11.0+cpu"
+    }
+}
