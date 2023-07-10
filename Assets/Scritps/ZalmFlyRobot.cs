@@ -15,9 +15,13 @@ public class ZalmFlyRobot : MonoBehaviour
     [SerializeField] private float yDelayNextTube;
     [SerializeField] private float yDelayNextTubeGoDown;
 
+    [SerializeField] private PlayerDeathmanager playerDeathmanager;
+
     private void Update()
     {
         if (!enabled) return;
+        
+        if (playerDeathmanager.isDead) playerDeathmanager.OnRestartClick();
 
         var playerPos = playerJump.gameObject.transform.position;
         
