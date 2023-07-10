@@ -15,7 +15,7 @@ public class PlayerJump : MonoBehaviour
     private float _lastJump;
     private static readonly int Jump1 = Animator.StringToHash("Jump");
     private bool _playerisDead;
-    private bool _firstJump = true;
+    public bool _firstJump = true;
 
     void Start()
     {

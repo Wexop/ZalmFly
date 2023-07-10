@@ -1070,6 +1070,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1178838131}
   - component: {fileID: 1178838130}
+  - component: {fileID: 1178838133}
+  - component: {fileID: 1178838132}
+  - component: {fileID: 1178838134}
   m_Layer: 0
   m_Name: ZalmFlyRobot
   m_TagString: Untagged
@@ -1084,12 +1087,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1178838129}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a8338642fba1b3409ba43c5dd46dba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enabled: 1
+  enabled: 0
   playerJump: {fileID: 1420887408}
   tubeGenerationManager: {fileID: 2063244181}
   yBeforeGround: -24
@@ -1112,6 +1115,66 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1178838132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178838129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185a1afce8a499646a5da61f5cd2de9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 0
+--- !u!114 &1178838133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178838129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BrainParameters:
+    VectorObservationSize: 1
+    NumStackedVectorObservations: 1
+    m_ActionSpec:
+      m_NumContinuousActions: 1
+      BranchSizes: 01000000
+    VectorActionSize: 
+    VectorActionDescriptions: []
+    VectorActionSpaceType: 1
+    hasUpgradedBrainParametersWithActionSpec: 1
+  m_Model: {fileID: 0}
+  m_InferenceDevice: 0
+  m_BehaviorType: 0
+  m_BehaviorName: ZalmFlyAgent
+  TeamId: 0
+  m_UseChildSensors: 1
+  m_UseChildActuators: 1
+  m_ObservableAttributeHandling: 0
+--- !u!114 &1178838134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178838129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DecisionPeriod: 5
+  TakeActionsBetweenDecisions: 1
 --- !u!1 &1235417115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,6 +1476,7 @@ MonoBehaviour:
   jumpPower: 22
   jumpCd: 0.2
   playerStartJump: {fileID: 11400000, guid: 1b9340675805c654c8b9c911cbd65f56, type: 2}
+  _firstJump: 1
 --- !u!95 &1420887409
 Animator:
   serializedVersion: 5
@@ -2132,7 +2196,6 @@ MonoBehaviour:
   tubeYRange: {x: -30.5, y: -15}
   tubePrefab:
   - {fileID: 6294867685267902629, guid: af1f4f5f576f0df459c6e94e6e5ee6d8, type: 3}
-  - {fileID: 6294867685267902629, guid: 586dca44c66c1104084c83579b5cd7ca, type: 3}
   tubeList: []
 --- !u!4 &2063244182
 Transform:
