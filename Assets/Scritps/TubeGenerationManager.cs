@@ -16,7 +16,7 @@ public class TubeGenerationManager : MonoBehaviour
     [SerializeField] private float spaceBetweenTube;
     [SerializeField] private Vector2 tubeYRange;
 
-    [SerializeField] private GameObject tubePrefab;
+    [SerializeField] private List<GameObject> tubePrefab;
 
     public List<GameObject> tubeList;
 
@@ -48,7 +48,7 @@ public class TubeGenerationManager : MonoBehaviour
         if (tubeList.Count == 0) pos.x = tubeLifePos.x;
         else pos.x = tubeList[tubeList.Count - 1].transform.position.x + spaceBetweenTube;
 
-        var newTube = tubePrefab;
+        var newTube = tubePrefab[Random.Range(0, tubePrefab.Count)];
         newTube.transform.position = pos;
         
         var test = Instantiate(newTube);

@@ -1412,7 +1412,9 @@ MonoBehaviour:
   tubeLifePos: {x: 87.8, y: -16.8}
   spaceBetweenTube: 30
   tubeYRange: {x: -30.5, y: -15}
-  tubePrefab: {fileID: 6294867685267902629, guid: af1f4f5f576f0df459c6e94e6e5ee6d8, type: 3}
+  tubePrefab:
+  - {fileID: 6294867685267902629, guid: af1f4f5f576f0df459c6e94e6e5ee6d8, type: 3}
+  - {fileID: 6294867685267902629, guid: 586dca44c66c1104084c83579b5cd7ca, type: 3}
   tubeList: []
 --- !u!4 &2063244182
 Transform:

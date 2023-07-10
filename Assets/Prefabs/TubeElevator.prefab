@@ -121,6 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3601096071395874968}
   - component: {fileID: 3309437024213692339}
+  - component: {fileID: -6702298611663923305}
   m_Layer: 0
   m_Name: TubeElevator
   m_TagString: Untagged
@@ -136,7 +137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6294867685267902629}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 283.697, y: -19.032438, z: 0}
+  m_LocalPosition: {x: 283.63763, y: -16.536753, z: 0}
   m_LocalScale: {x: 6.9999995, y: 6.9999995, z: 6.9999995}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -159,6 +160,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {fileID: 11400000, guid: 79ceecb1650c1fa498099c2cbba3489d, type: 2}
+--- !u!114 &-6702298611663923305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6294867685267902629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1498510f0b2c0114d843eb1b72269d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  yPosMax: {x: -30.5, y: -15}
 --- !u!1 &6874543528122131994
 GameObject:
   m_ObjectHideFlags: 0
