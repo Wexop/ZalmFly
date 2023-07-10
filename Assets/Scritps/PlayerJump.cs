@@ -29,11 +29,13 @@ public class PlayerJump : MonoBehaviour
     void Update()
     {
         _lastJump += Time.deltaTime;
-        if (!_playerisDead && Input.GetKey(KeyCode.Space)) Jump();
+        if (Input.GetKey(KeyCode.Space)) Jump();
     }
 
     public void Jump()
     {
+        
+        if(_playerisDead) return;
         
         if (_firstJump)
         {

@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 3601096071395874968}
   - component: {fileID: 3309437024213692339}
   m_Layer: 0
-  m_Name: Tube
+  m_Name: TubeElevator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

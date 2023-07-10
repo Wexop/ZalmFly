@@ -554,6 +554,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1160275938}
   m_CullTransparentMesh: 1
+--- !u!1 &1178838129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1178838131}
+  - component: {fileID: 1178838130}
+  m_Layer: 0
+  m_Name: ZalmFlyRobot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1178838130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178838129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a8338642fba1b3409ba43c5dd46dba2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabled: 1
+  playerJump: {fileID: 1420887408}
+  tubeGenerationManager: {fileID: 2063244181}
+  yBeforeGround: -24
+  xBeforeSwitchTube: 10
+  yDelayNextTube: 8
+--- !u!4 &1178838131
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178838129}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 33.125065, y: -13.775781, z: 0.3491295}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1235417115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,7 +1411,7 @@ MonoBehaviour:
   maxTubeInList: 10
   tubeLifePos: {x: 87.8, y: -16.8}
   spaceBetweenTube: 30
-  tubeYRange: {x: -30.5, y: -19.9}
+  tubeYRange: {x: -30.5, y: -15}
   tubePrefab: {fileID: 6294867685267902629, guid: af1f4f5f576f0df459c6e94e6e5ee6d8, type: 3}
   tubeList: []
 --- !u!4 &2063244182
