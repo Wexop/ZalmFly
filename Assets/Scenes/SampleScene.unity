@@ -589,6 +589,7 @@ MonoBehaviour:
   yBeforeGround: -24
   xBeforeSwitchTube: 10
   yDelayNextTube: 8
+  yDelayNextTubeGoDown: 6.78
 --- !u!4 &1178838131
 Transform:
   m_ObjectHideFlags: 0

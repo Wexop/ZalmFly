@@ -13,6 +13,7 @@ public class ZalmFlyRobot : MonoBehaviour
     [SerializeField] private float yBeforeGround;
     [SerializeField] private float xBeforeSwitchTube;
     [SerializeField] private float yDelayNextTube;
+    [SerializeField] private float yDelayNextTubeGoDown;
 
     private void Update()
     {
@@ -32,8 +33,13 @@ public class ZalmFlyRobot : MonoBehaviour
         {
             if (t.gameObject.tag == "ScoreAdder") holePos = t.position;
         }
+
+        var isElevator = nextTube.TryGetComponent(out TubeElevator tubeElevator);
+        var goingDown = tubeElevator && tubeElevator._goUp;
+
+        var yAdd = (isElevator && !goingDown) ? yDelayNextTubeGoDown : yDelayNextTube;
         
-        if (playerPos.y < holePos.y + yDelayNextTube) playerJump.Jump();
+        if (playerPos.y < holePos.y + yAdd ) playerJump.Jump();
 
     }
 }

@@ -10,7 +10,7 @@ public class TubeElevator : MonoBehaviour
    [SerializeField] private Vector2 yPosMax;
 
    private Vector3 _firstPos;
-   private bool _goUp;
+   public bool _goUp;
 
    private void Start()
    {
