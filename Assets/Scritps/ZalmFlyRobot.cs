@@ -17,11 +17,43 @@ public class ZalmFlyRobot : MonoBehaviour
 
     [SerializeField] private PlayerDeathmanager playerDeathmanager;
 
+
+    public static ZalmFlyRobot instance = null;  
+
+    //Awake is always called before any Start functions
+    void Awake()
+    {
+        //Check if instance already exists
+        if (instance == null)
+        {
+            //if not, set instance to this
+            instance = this;
+        }
+        //If instance already exists and it's not this:
+        else if (instance != this)
+        {
+            Destroy(gameObject);   
+        }
+        
+        GetGameObjects();
+
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void GetGameObjects()
+    {
+        if (!playerJump) playerJump = FindObjectOfType<PlayerJump>();
+        if (!tubeGenerationManager ) tubeGenerationManager = FindObjectOfType<TubeGenerationManager>();
+        if (!playerDeathmanager ) playerDeathmanager = FindObjectOfType<PlayerDeathmanager>();
+    }
+
     private void Update()
     {
         if (!enabled) return;
         
         if (playerDeathmanager.isDead) playerDeathmanager.OnRestartClick();
+        
+        GetGameObjects();
 
         var playerPos = playerJump.gameObject.transform.position;
         

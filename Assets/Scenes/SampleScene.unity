@@ -1094,8 +1094,8 @@ MonoBehaviour:
   tubeGenerationManager: {fileID: 2063244181}
   yBeforeGround: -24
   xBeforeSwitchTube: 5
-  yDelayNextTube: 7.85
-  yDelayNextTubeGoDown: 7.44
+  yDelayNextTube: 0
+  yDelayNextTubeGoDown: 0
   playerDeathmanager: {fileID: 1589640555}
 --- !u!4 &1178838131
 Transform:
@@ -1323,7 +1323,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1737950283
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7a8428490e3bf5e43b6a2425d8bc3ac8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
