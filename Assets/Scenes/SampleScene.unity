@@ -1153,7 +1153,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 0}
+  m_Model: {fileID: 5022602860645237092, guid: 8d7ee7b288dd2414ab8165e82a8df427, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: ZalmFlyAgent
@@ -2189,7 +2189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tubeSpeedVariable: {fileID: 11400000, guid: 79ceecb1650c1fa498099c2cbba3489d, type: 2}
-  tubeSpeedInitial: 20
+  tubeSpeedInitial: 10
   maxTubeInList: 10
   tubeLifePos: {x: 87.8, y: -16.8}
   spaceBetweenTube: 30

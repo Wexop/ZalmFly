@@ -70,19 +70,21 @@ public class ZalmFlyAgent : Agent
         var nextTube = _tubeGenerationManager.tubeList.Find((tube) =>
             tube.transform.position.x > _playerJump.gameObject.transform.position.x);
         
-        var transforms = nextTube.GetComponentsInChildren<Transform>();
+        var transforms = nextTube ? nextTube.GetComponentsInChildren<Transform>() : new Transform[]{};
         Vector3 holePos = new Vector3(0,0,0);
+        Vector3 afterTubePos = new Vector3(0, 0, 0);
 
         foreach (var t in transforms)
         {
-            if (t.gameObject.tag == "ScoreAdder") holePos = t.position;
+            sensor.AddObservation(t.position);
         }
-        sensor.AddObservation(holePos);
-        sensor.AddObservation(nextTube.transform);
+
+        if (nextTube) sensor.AddObservation(nextTube.transform);
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if(other.gameObject.CompareTag("AfterTube")) SetReward(1f);
         if(other.gameObject.CompareTag("ScoreAdder")) SetReward(1f);
         if(other.gameObject.CompareTag("DeadCollider")) SetReward(-1f);
     }
