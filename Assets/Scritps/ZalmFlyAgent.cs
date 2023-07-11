@@ -14,7 +14,9 @@ public class ZalmFlyAgent : Agent
     private TubeGenerationManager _tubeGenerationManager;
     private PlayerDeathmanager _playerDeathmanager;
 
-    public static ZalmFlyAgent instance = null;  
+    [SerializeField] private Transform ground;
+
+    /*public static ZalmFlyAgent instance = null;  
 
     //Awake is always called before any Start functions
     void Awake()
@@ -31,30 +33,29 @@ public class ZalmFlyAgent : Agent
             Destroy(gameObject);   
         }
         GetGameObjects();
-    }
+    }*/
 
     private void GetGameObjects()
     {
-        if (!_playerJump) _playerJump = FindObjectOfType<PlayerJump>();
+        if (!_playerJump) _playerJump = GetComponent<PlayerJump>();
         if (!_tubeGenerationManager) _tubeGenerationManager = FindObjectOfType<TubeGenerationManager>();
         if (!_playerDeathmanager) _playerDeathmanager = FindObjectOfType<PlayerDeathmanager>();
     }
 
     public override void OnActionReceived(ActionBuffers actions)
     {
-        float moveY = actions.ContinuousActions[0];
+        float moveY = actions.DiscreteActions[0];
         
-        if (moveY == 1)
+        if (moveY == 0)
         {
             _playerJump.Jump();
-
         }
 
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {
-        ActionSegment<float> continuousActions = actionsOut.ContinuousActions;
+        ActionSegment<int> continuousActions = actionsOut.DiscreteActions;
         continuousActions[0] = 0;
         if (Input.GetKey(KeyCode.Space)) continuousActions[0] = 1;
 
@@ -62,11 +63,15 @@ public class ZalmFlyAgent : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
+
+        sensor.AddObservation(ground.position.y);
         
         sensor.AddObservation(_playerJump._firstJump);
+        sensor.AddObservation(_playerJump._rb.velocity.y);
+        sensor.AddObservation(_playerJump.gameObject.transform.rotation);
 
-        sensor.AddObservation(_playerJump.gameObject.transform.position);
-        
+        sensor.AddObservation(_playerJump.gameObject.transform.position.y);
+
         var nextTube = _tubeGenerationManager.tubeList.Find((tube) =>
             tube.transform.position.x > _playerJump.gameObject.transform.position.x);
         
@@ -80,11 +85,14 @@ public class ZalmFlyAgent : Agent
         }
 
         if (nextTube) sensor.AddObservation(nextTube.transform.position);
+        
+        Debug.Log(nextTube.transform.position);
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("AfterTube")) SetReward(10f);
+        if(other.gameObject.CompareTag("AfterTube")) SetReward(5);
         if(other.gameObject.CompareTag("ScoreAdder")) SetReward(3f);
         if(other.gameObject.CompareTag("DeadCollider")) SetReward(-10f);
     }

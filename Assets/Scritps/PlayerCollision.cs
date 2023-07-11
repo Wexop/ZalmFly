@@ -14,7 +14,7 @@ public class PlayerCollision : MonoBehaviour
     private float _lastScoreAdderId;
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "DeadCollider")
+        if (col.gameObject.tag == "DeadCollider" && !GetComponent<PlayerJump>().cantDie)
         {
             playerDieEvent.Raise();
         }

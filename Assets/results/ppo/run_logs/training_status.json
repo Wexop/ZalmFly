@@ -1,59 +1,50 @@
 {
-    "ZalmAgent": {
+    "My Behavior": {
         "checkpoints": [
             {
-                "steps": 48169,
-                "file_path": "results\\ppo\\ZalmAgent\\ZalmAgent-48169.onnx",
-                "reward": -327.0,
-                "creation_time": 1689075836.4945014,
-                "auxillary_file_paths": [
-                    "results\\ppo\\ZalmAgent\\ZalmAgent-48169.pt"
-                ]
-            },
-            {
-                "steps": 114012,
-                "file_path": "results\\ppo\\ZalmAgent\\ZalmAgent-114012.onnx",
-                "reward": -125.64285714285714,
-                "creation_time": 1689076202.502233,
-                "auxillary_file_paths": [
-                    "results\\ppo\\ZalmAgent\\ZalmAgent-114012.pt"
-                ]
-            },
-            {
-                "steps": 196745,
-                "file_path": "results\\ppo\\ZalmAgent\\ZalmAgent-196745.onnx",
-                "reward": 0.0,
-                "creation_time": 1689076765.8126004,
-                "auxillary_file_paths": [
-                    "results\\ppo\\ZalmAgent\\ZalmAgent-196745.pt"
-                ]
-            },
-            {
-                "steps": 203721,
-                "file_path": "results\\ppo\\ZalmAgent\\ZalmAgent-203721.onnx",
+                "steps": 576,
+                "file_path": "results\\ppo\\My Behavior\\My Behavior-576.onnx",
                 "reward": null,
-                "creation_time": 1689076914.9581976,
+                "creation_time": 1689101145.1089797,
                 "auxillary_file_paths": [
-                    "results\\ppo\\ZalmAgent\\ZalmAgent-203721.pt"
+                    "results\\ppo\\My Behavior\\My Behavior-576.pt"
                 ]
             },
             {
-                "steps": 213495,
-                "file_path": "results\\ppo\\ZalmAgent\\ZalmAgent-213495.onnx",
+                "steps": 100106,
+                "file_path": "results\\ppo\\My Behavior\\My Behavior-100106.onnx",
                 "reward": 0.0,
-                "creation_time": 1689077097.5269504,
+                "creation_time": 1689101307.7499225,
                 "auxillary_file_paths": [
-                    "results\\ppo\\ZalmAgent\\ZalmAgent-213495.pt"
+                    "results\\ppo\\My Behavior\\My Behavior-100106.pt"
+                ]
+            },
+            {
+                "steps": 499978,
+                "file_path": "results\\ppo\\My Behavior\\My Behavior-499978.onnx",
+                "reward": null,
+                "creation_time": 1689101696.830661,
+                "auxillary_file_paths": [
+                    "results\\ppo\\My Behavior\\My Behavior-499978.pt"
+                ]
+            },
+            {
+                "steps": 580411,
+                "file_path": "results\\ppo\\My Behavior\\My Behavior-580411.onnx",
+                "reward": 0.0,
+                "creation_time": 1689101947.1514137,
+                "auxillary_file_paths": [
+                    "results\\ppo\\My Behavior\\My Behavior-580411.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 213495,
-            "file_path": "results\\ppo\\ZalmAgent.onnx",
+            "steps": 580411,
+            "file_path": "results\\ppo\\My Behavior.onnx",
             "reward": 0.0,
-            "creation_time": 1689077097.5269504,
+            "creation_time": 1689101947.1514137,
             "auxillary_file_paths": [
-                "results\\ppo\\ZalmAgent\\ZalmAgent-213495.pt"
+                "results\\ppo\\My Behavior\\My Behavior-580411.pt"
             ]
         }
     },

@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class PlayerJump : MonoBehaviour
 {
-    private Rigidbody2D _rb;
+    public Rigidbody2D _rb;
     private Animator _animator;
     [SerializeField] public float jumpPower;
     [SerializeField] public float jumpCd;
+
+    public bool cantDie;
 
     [SerializeField] private GameEvent playerStartJump;
 
@@ -35,7 +37,7 @@ public class PlayerJump : MonoBehaviour
     public void Jump()
     {
         
-        if(_playerisDead) return;
+        if(_playerisDead && !cantDie) return;
         
         if (_firstJump)
         {
@@ -52,6 +54,6 @@ public class PlayerJump : MonoBehaviour
 
     public void OnPlayerDead()
     {
-        _playerisDead = true;
+       if(!cantDie) _playerisDead = true;
     }
 }
