@@ -1,59 +1,59 @@
 {
-    "ZalmFlyAgent": {
+    "ZalmAgent": {
         "checkpoints": [
             {
-                "steps": 11905,
-                "file_path": "results\\ppo\\ZalmFlyAgent\\ZalmFlyAgent-11905.onnx",
-                "reward": -502.0,
-                "creation_time": 1689022539.7080362,
+                "steps": 48169,
+                "file_path": "results\\ppo\\ZalmAgent\\ZalmAgent-48169.onnx",
+                "reward": -327.0,
+                "creation_time": 1689075836.4945014,
                 "auxillary_file_paths": [
-                    "results\\ppo\\ZalmFlyAgent\\ZalmFlyAgent-11905.pt"
+                    "results\\ppo\\ZalmAgent\\ZalmAgent-48169.pt"
                 ]
             },
             {
-                "steps": 499954,
-                "file_path": "results\\ppo\\ZalmFlyAgent\\ZalmFlyAgent-499954.onnx",
-                "reward": -0.7972972972972973,
-                "creation_time": 1689025303.7478006,
+                "steps": 114012,
+                "file_path": "results\\ppo\\ZalmAgent\\ZalmAgent-114012.onnx",
+                "reward": -125.64285714285714,
+                "creation_time": 1689076202.502233,
                 "auxillary_file_paths": [
-                    "results\\ppo\\ZalmFlyAgent\\ZalmFlyAgent-499954.pt"
+                    "results\\ppo\\ZalmAgent\\ZalmAgent-114012.pt"
                 ]
             },
             {
-                "steps": 500018,
-                "file_path": "results\\ppo\\ZalmFlyAgent\\ZalmFlyAgent-500018.onnx",
-                "reward": -0.7972972972972973,
-                "creation_time": 1689025303.8162365,
+                "steps": 196745,
+                "file_path": "results\\ppo\\ZalmAgent\\ZalmAgent-196745.onnx",
+                "reward": 0.0,
+                "creation_time": 1689076765.8126004,
                 "auxillary_file_paths": [
-                    "results\\ppo\\ZalmFlyAgent\\ZalmFlyAgent-500018.pt"
+                    "results\\ppo\\ZalmAgent\\ZalmAgent-196745.pt"
                 ]
             },
             {
-                "steps": 500018,
-                "file_path": "results\\ppo\\ZalmFlyAgent\\ZalmFlyAgent-500018.onnx",
+                "steps": 203721,
+                "file_path": "results\\ppo\\ZalmAgent\\ZalmAgent-203721.onnx",
                 "reward": null,
-                "creation_time": 1689025320.8306413,
+                "creation_time": 1689076914.9581976,
                 "auxillary_file_paths": [
-                    "results\\ppo\\ZalmFlyAgent\\ZalmFlyAgent-500018.pt"
+                    "results\\ppo\\ZalmAgent\\ZalmAgent-203721.pt"
                 ]
             },
             {
-                "steps": 500018,
-                "file_path": "results\\ppo\\ZalmFlyAgent\\ZalmFlyAgent-500018.onnx",
-                "reward": null,
-                "creation_time": 1689025364.115259,
+                "steps": 213495,
+                "file_path": "results\\ppo\\ZalmAgent\\ZalmAgent-213495.onnx",
+                "reward": 0.0,
+                "creation_time": 1689077097.5269504,
                 "auxillary_file_paths": [
-                    "results\\ppo\\ZalmFlyAgent\\ZalmFlyAgent-500018.pt"
+                    "results\\ppo\\ZalmAgent\\ZalmAgent-213495.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 500018,
-            "file_path": "results\\ppo\\ZalmFlyAgent.onnx",
-            "reward": null,
-            "creation_time": 1689025364.115259,
+            "steps": 213495,
+            "file_path": "results\\ppo\\ZalmAgent.onnx",
+            "reward": 0.0,
+            "creation_time": 1689077097.5269504,
             "auxillary_file_paths": [
-                "results\\ppo\\ZalmFlyAgent\\ZalmFlyAgent-500018.pt"
+                "results\\ppo\\ZalmAgent\\ZalmAgent-213495.pt"
             ]
         }
     },

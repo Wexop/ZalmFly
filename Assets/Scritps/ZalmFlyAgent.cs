@@ -48,11 +48,7 @@ public class ZalmFlyAgent : Agent
         {
             _playerJump.Jump();
 
-            if (_playerJump._firstJump) SetReward(1f);
-            
         }
-        
-        if (moveY != 1 && _playerJump._firstJump) SetReward(-1f);
 
     }
 
@@ -66,7 +62,11 @@ public class ZalmFlyAgent : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        sensor.AddObservation(_playerJump.gameObject.transform);
+        
+        sensor.AddObservation(_playerJump._firstJump);
+
+        sensor.AddObservation(_playerJump.gameObject.transform.position);
+        
         var nextTube = _tubeGenerationManager.tubeList.Find((tube) =>
             tube.transform.position.x > _playerJump.gameObject.transform.position.x);
         
@@ -79,18 +79,19 @@ public class ZalmFlyAgent : Agent
             sensor.AddObservation(t.position);
         }
 
-        if (nextTube) sensor.AddObservation(nextTube.transform);
+        if (nextTube) sensor.AddObservation(nextTube.transform.position);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("AfterTube")) SetReward(1f);
-        if(other.gameObject.CompareTag("ScoreAdder")) SetReward(1f);
-        if(other.gameObject.CompareTag("DeadCollider")) SetReward(-1f);
+        if(other.gameObject.CompareTag("AfterTube")) SetReward(10f);
+        if(other.gameObject.CompareTag("ScoreAdder")) SetReward(3f);
+        if(other.gameObject.CompareTag("DeadCollider")) SetReward(-10f);
     }
 
     private void Update()
     {
+        
         if (!_playerDeathmanager || !_playerJump || !_tubeGenerationManager) GetGameObjects();
         if(_playerDeathmanager.isDead)
         {

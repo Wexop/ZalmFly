@@ -29,7 +29,7 @@ public class PlayerJump : MonoBehaviour
     void Update()
     {
         _lastJump += Time.deltaTime;
-        if (Input.GetKey(KeyCode.Space)) Jump();
+        //if (Input.GetKey(KeyCode.Space)) Jump();
     }
 
     public void Jump()
