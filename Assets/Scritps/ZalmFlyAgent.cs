@@ -15,6 +15,7 @@ public class ZalmFlyAgent : Agent
     private PlayerDeathmanager _playerDeathmanager;
 
     [SerializeField] private Transform ground;
+    [SerializeField] private Transform sky;
 
     /*public static ZalmFlyAgent instance = null;  
 
@@ -44,9 +45,9 @@ public class ZalmFlyAgent : Agent
 
     public override void OnActionReceived(ActionBuffers actions)
     {
-        float moveY = actions.DiscreteActions[0];
-        
-        if (moveY == 0)
+        int moveY = actions.DiscreteActions[0];
+
+        if (moveY == 1)
         {
             _playerJump.Jump();
         }
@@ -64,13 +65,15 @@ public class ZalmFlyAgent : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
 
-        sensor.AddObservation(ground.position.y);
+        sensor.AddObservation(ground.transform.position);
+        sensor.AddObservation(sky.transform.position);
         
         sensor.AddObservation(_playerJump._firstJump);
         sensor.AddObservation(_playerJump._rb.velocity.y);
-        sensor.AddObservation(_playerJump.gameObject.transform.rotation);
+        sensor.AddObservation(_playerJump.transform.rotation);
 
-        sensor.AddObservation(_playerJump.gameObject.transform.position.y);
+        sensor.AddObservation(_playerJump.transform.position.y);
+        sensor.AddObservation(_playerJump.transform.position.x);
 
         var nextTube = _tubeGenerationManager.tubeList.Find((tube) =>
             tube.transform.position.x > _playerJump.gameObject.transform.position.x);
@@ -90,22 +93,42 @@ public class ZalmFlyAgent : Agent
         
     }
 
+    private void Start()
+    {
+        GetGameObjects();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("AfterTube")) SetReward(5);
-        if(other.gameObject.CompareTag("ScoreAdder")) SetReward(3f);
-        if(other.gameObject.CompareTag("DeadCollider")) SetReward(-10f);
+        if(other.gameObject.CompareTag("AfterTube")) AddReward(2f);
+        if(other.gameObject.CompareTag("ScoreAdder")) AddReward(1f);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("DeadCollider"))
+        {
+            AddReward(-1);
+            EndEpisode();
+        }
+        
+    }
+    
+    private void OnCollisionStay(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("DeadCollider"))
+        {
+            AddReward(-1);
+            EndEpisode();
+        }
     }
 
     private void Update()
     {
         
         if (!_playerDeathmanager || !_playerJump || !_tubeGenerationManager) GetGameObjects();
-        if(_playerDeathmanager.isDead)
-        {
-            EndEpisode();
-            _playerDeathmanager.OnRestartClick();
-        }
+        
+        if (_playerDeathmanager.isDead) _playerDeathmanager.OnRestartClick(); ;
 
     }
 }

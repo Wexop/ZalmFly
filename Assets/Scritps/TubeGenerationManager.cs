@@ -42,6 +42,16 @@ public class TubeGenerationManager : MonoBehaviour
         
     }
 
+    public void RemoveAllTube()
+    {
+        foreach (var tube in tubeList)
+        {
+            Destroy(tube.gameObject);
+        }
+        
+        tubeList.Clear();
+    }
+
     private void AddTube()
     {
         var pos = new Vector3(0, Random.Range(tubeYRange.x, tubeYRange.y),0);
