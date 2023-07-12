@@ -2,49 +2,58 @@
     "My Behavior": {
         "checkpoints": [
             {
-                "steps": 576,
-                "file_path": "results\\ppo\\My Behavior\\My Behavior-576.onnx",
+                "steps": 28069,
+                "file_path": "results\\ppo\\My Behavior\\My Behavior-28069.onnx",
                 "reward": null,
-                "creation_time": 1689101145.1089797,
+                "creation_time": 1689178486.224315,
                 "auxillary_file_paths": [
-                    "results\\ppo\\My Behavior\\My Behavior-576.pt"
+                    "results\\ppo\\My Behavior\\My Behavior-28069.pt"
                 ]
             },
             {
-                "steps": 100106,
-                "file_path": "results\\ppo\\My Behavior\\My Behavior-100106.onnx",
-                "reward": 0.0,
-                "creation_time": 1689101307.7499225,
-                "auxillary_file_paths": [
-                    "results\\ppo\\My Behavior\\My Behavior-100106.pt"
-                ]
-            },
-            {
-                "steps": 499978,
-                "file_path": "results\\ppo\\My Behavior\\My Behavior-499978.onnx",
+                "steps": 29989,
+                "file_path": "results\\ppo\\My Behavior\\My Behavior-29989.onnx",
                 "reward": null,
-                "creation_time": 1689101696.830661,
+                "creation_time": 1689178572.975211,
                 "auxillary_file_paths": [
-                    "results\\ppo\\My Behavior\\My Behavior-499978.pt"
+                    "results\\ppo\\My Behavior\\My Behavior-29989.pt"
                 ]
             },
             {
-                "steps": 580411,
-                "file_path": "results\\ppo\\My Behavior\\My Behavior-580411.onnx",
-                "reward": 0.0,
-                "creation_time": 1689101947.1514137,
+                "steps": 59941,
+                "file_path": "results\\ppo\\My Behavior\\My Behavior-59941.onnx",
+                "reward": null,
+                "creation_time": 1689178830.8833055,
                 "auxillary_file_paths": [
-                    "results\\ppo\\My Behavior\\My Behavior-580411.pt"
+                    "results\\ppo\\My Behavior\\My Behavior-59941.pt"
+                ]
+            },
+            {
+                "steps": 107941,
+                "file_path": "results\\ppo\\My Behavior\\My Behavior-107941.onnx",
+                "reward": null,
+                "creation_time": 1689179079.5233958,
+                "auxillary_file_paths": [
+                    "results\\ppo\\My Behavior\\My Behavior-107941.pt"
+                ]
+            },
+            {
+                "steps": 236581,
+                "file_path": "results\\ppo\\My Behavior\\My Behavior-236581.onnx",
+                "reward": null,
+                "creation_time": 1689179253.762183,
+                "auxillary_file_paths": [
+                    "results\\ppo\\My Behavior\\My Behavior-236581.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 580411,
+            "steps": 236581,
             "file_path": "results\\ppo\\My Behavior.onnx",
-            "reward": 0.0,
-            "creation_time": 1689101947.1514137,
+            "reward": null,
+            "creation_time": 1689179253.762183,
             "auxillary_file_paths": [
-                "results\\ppo\\My Behavior\\My Behavior-580411.pt"
+                "results\\ppo\\My Behavior\\My Behavior-236581.pt"
             ]
         }
     },

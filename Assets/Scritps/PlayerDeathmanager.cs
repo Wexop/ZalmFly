@@ -11,10 +11,13 @@ public class PlayerDeathmanager : MonoBehaviour
     [SerializeField] private FloatVariable tubeSpeed;
     [SerializeField] private GameObject deathCanvas;
     public bool isDead;
+    private float tubeSpeedInit;
 
     private void Start()
     {
+        isDead = false;
         deathCanvas.SetActive(false);
+        tubeSpeedInit = tubeSpeed.Value;
     }
 
     public void OnPlayerDeath()
@@ -26,7 +29,17 @@ public class PlayerDeathmanager : MonoBehaviour
 
     public void OnRestartClick()
     {
-        SceneManager.LoadScene("SampleScene");
+        var playerJump = FindObjectOfType<PlayerJump>();
+        playerJump._firstJump = true;
+        playerJump._playerisDead = false;
+        playerJump.transform.position = new Vector3(15, -11, 0);
+
+        var tubeManager = FindObjectOfType<TubeGenerationManager>();
+        tubeManager.RemoveAllTube();
+
+        tubeSpeed.Value = tubeSpeedInit;
+        Start();
+
     }
     
 }
